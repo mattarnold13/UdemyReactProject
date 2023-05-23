@@ -12,15 +12,21 @@ class CarList extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/photos')
-            .then((response) => {
-                this.setState({ carList: response.data });
-            });
-    }
+
+        const url="http://mattarnold13.com/api/workout";
+        //const url="https://jsonplaceholder.typicode.com/photos";
+      
+
+        axios.get(url, {} )
+          .then((response) => console.log(response.data))
+          .catch((err) => console.log(err)) }
+
+        
 
     renderList = () => {
         return this.state.carList.map((a) => {
-            return <CarDetail key={a.id} title={a.title} />;
+          //  return <CarDetail key={a.id} title={a.title} />;
+            return <CarDetail key={a.id} />;
         })
     }
 
