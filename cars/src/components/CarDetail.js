@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
 
-const CarDetail = props => {
+const CarDetail = (key) => {
     return (
     <View>
-        <Text>props.title</Text>
+        <Text>{key}</Text>
     </View>
     );
 };

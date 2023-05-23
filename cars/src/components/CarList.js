@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import axios from 'axios';
 import CarDetail from './CarDetail';
 
@@ -18,15 +18,20 @@ class CarList extends Component {
       
 
         axios.get(url, {} )
-          .then((response) => console.log(response.data))
-          .catch((err) => console.log(err)) }
+          .then((response) => this.setState({ carList : response.data.WorkOutList}, () => {
+            console.log(this.state.carList)
+          }))
+          .catch((err) => console.log(err))
+            
+        }
 
         
 
     renderList = () => {
         return this.state.carList.map((a) => {
           //  return <CarDetail key={a.id} title={a.title} />;
-            return <CarDetail key={a.id} />;
+          return <Text>{a.ExerciseType}</Text>;
+          //return <CarDetail key={a.ExerciseType} />;
         })
     }
 
