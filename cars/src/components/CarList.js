@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import axios from 'axios';
 import CarDetail from './CarDetail';
 
@@ -29,8 +29,11 @@ class CarList extends Component {
 
     renderList = () => {
         return this.state.carList.map((a) => {
-          //  return <CarDetail key={a.id} title={a.title} />;
-          return <Text>{a.ExerciseType}</Text>;
+          return <CarDetail key={a.Date} key2={a.ExerciseType} a={a} />;
+
+
+        //   return <CarDetail key={a.Date}>
+        //     {a.Date} {a.ExerciseType} {a.Distance} a={a} </CarDetail>;
           //return <CarDetail key={a.ExerciseType} />;
         })
     }
@@ -38,9 +41,9 @@ class CarList extends Component {
     render() {
         console.log(this.state);
         return (
-            <View>
-                {this.renderList()}
-            </View>
+          <ScrollView>
+            {this.renderList()}
+          </ScrollView>
         );
     }
 }

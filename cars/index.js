@@ -10,8 +10,8 @@ import CarList from './src/components/CarList';
 //create component
 const App = () => {
     return ( 
-        <View>
-            <Header title={'Cars'} />
+        <View style={{flex: 1}}>
+            <Header title={'My Work Out List'} />
             <CarList />
          </View>
     );

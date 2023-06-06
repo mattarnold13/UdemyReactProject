@@ -18,13 +18,13 @@ const Header = (props) => {
 const styles = {
     textStyling: {
         fontSize: 40,
-        color: 'blue',
+        color: 'black',
         fontWeight: 'bold'
 
     },
 
     viewStyle: {
-        backgroundColor: "gainsboro",
+        backgroundColor: "lightsteelblue",
         height: 70,
         jusifyContent: "center",
         alignItems: "center",
